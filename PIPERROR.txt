@@ -1,0 +1,71 @@
+I have changed 10.0.1 to 18.0 in 'C:\Folder\To\Project\venv\Scripts' in the files called pip-script.py, pip3-script.py, and pip3.6-script.py. This seems to now have the right version,
+
+I got the above information for intellij jet-brains
+
+
+what really happened?
+
+when i tried to install any package in the terminal of pycharm (In venv),
+it warns me about upgrading pip [pip install --upgrade pip] and says that venv is still 
+using old version of pip while new version is available.
+
+So, it made me to use that command. Well, again it says that the latest version of pip is already installed and requirement is already satisfied. OMG...
+
+
+I'm soo over this..
+
+then, I opend the .\venv\Scripts
+checked all the files and i got three weired files which are
+1.pip-script.py
+2.pip3-script.py
+3.pip3.8-script.py
+ 
+each file looks like this
+##############################################################################
+#!D:\PYTHON\PYCHARM\CSI_pro\venv\Scripts\python.exe
+# EASY-INSTALL-ENTRY-SCRIPT: 'pip==10.0.1','console_scripts','pip'
+__requires__ = 'pip==10.0.1'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('pip==10.0.1', 'console_scripts', 'pip')()
+    )
+################################################################################
+
+I just changed old version of pip in the file to the latest version(20.1.1)
+
+##############################################################################
+#!D:\PYTHON\PYCHARM\CSI_pro\venv\Scripts\python.exe
+# EASY-INSTALL-ENTRY-SCRIPT: 'pip==20.1.1','console_scripts','pip'
+__requires__ = 'pip==20.1.1'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('pip==20.1.1', 'console_scripts', 'pip')()
+    )
+################################################################################
+
+
+just done it for all remaining files(python files) which are realted to pip(python files)
+
+BOOM...
+previously the pip version 10.0.1
+now I checked for the version of pip in terminal(pip --version/pip -V)
+its showing 20.1.1
+
+but still don't know why I need to manually type the upgraded version in those python script files
+
+
+
+
+
+
+
